@@ -1,0 +1,39 @@
+seed: 1
+record_video: yes
+
+environment:
+  render: True
+# just testing commenting
+  num_envs: 100
+  eval_every_n: 1000
+  num_threads: 30
+  simulation_dt: 0.0025
+  control_dt: 0.01
+  max_time: 4.0
+  reward:
+    forwardVel:
+      coeff: 1.2
+    backwardVel:
+      coeff: -1.2
+    rightwardVel:
+      coeff: 1.2
+    leftwardVel:
+      coeff: -1.2
+    torque:
+      coeff: -14e-5
+    ccwiseVel:
+      coeff: 1.2
+    cwiseVel:
+      coeff: -1.2
+    ccwisejoint:
+      coeff: 0.8
+    cwisejoint:
+      coeff: -0.8
+    joint:
+      coeff: 0.8
+    zeroVel:
+      coeff: 0.8
+
+architecture:
+  policy_net: [128, 128]
+  value_net: [128, 128]
